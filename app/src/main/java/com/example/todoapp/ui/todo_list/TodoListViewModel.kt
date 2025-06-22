@@ -26,7 +26,7 @@ class TodoListViewModel @Inject constructor(
 
     fun onEvent(event: TodoListEvent) {
         when(event) {
-            is TodoListEvent.DeleteTodo -> {
+            is TodoListEvent.onDeleteTodoClick -> {
                 viewModelScope.launch {
                     deletedTodo = event.todo
                     repository.deleteTodo(event.todo)
